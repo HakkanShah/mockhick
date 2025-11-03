@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -27,7 +26,8 @@ export function UserNav() {
       router.push('/');
     } catch (error) {
       console.error("Sign out failed", error);
-  };
+    }
+  }; // ✅ properly closed
 
   const getInitials = (name: string | null | undefined) => {
     if (!name) return "U";
@@ -39,7 +39,7 @@ export function UserNav() {
   };
 
   if (!user) {
-    return null; 
+    return null;
   }
 
   return (
