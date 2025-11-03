@@ -1,5 +1,4 @@
-
-import type {NextConfig} from 'next';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -11,43 +10,22 @@ const nextConfig: NextConfig = {
   },
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'placehold.co',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'timesproweb-static-backend-prod.s3.ap-south-1.amazonaws.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'github.com',
-        port: '',
-        pathname: '/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'i.ibb.co',
-        port: '',
-        pathname: '/**',
-      }
+      { protocol: 'https', hostname: 'placehold.co', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'images.unsplash.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'picsum.photos', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'timesproweb-static-backend-prod.s3.ap-south-1.amazonaws.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'github.com', port: '', pathname: '/**' },
+      { protocol: 'https', hostname: 'i.ibb.co', port: '', pathname: '/**' },
     ],
+  },
+  webpack: (config) => {
+    // Ignore critical dependency warnings from OpenTelemetry
+    config.ignoreWarnings = [
+      {
+        module: /@opentelemetry\/instrumentation/,
+      },
+    ];
+    return config;
   },
 };
 
