@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 67% 97%;
+    --foreground: 220 9% 23%;
+    --card: 225 67% 100%;
+    --card-foreground: 220 9% 23%;
+    --popover: 225 67% 100%;
+    --popover-foreground: 220 9% 23%;
+    --primary: 226 76% 56%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 225 50% 92%;
+    --secondary-foreground: 220 9% 23%;
+    --muted: 225 50% 92%;
+    --muted-foreground: 220 9% 45%;
+    --accent: 226 76% 50%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 225 20% 85%;
+    --input: 225 20% 90%;
+    --ring: 226 76% 56%;
+    --radius: 0.75rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 226 76% 56%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 210 70% 50%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 226 76% 56%;
+    --radius: 0.75rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animate-attention-ring {
+    animation: attention-ring 2s ease-in-out infinite;
+  }
+  .animated-gradient {
+    animation: animated-gradient 15s ease infinite;
+    background-size: 400% 400%;
+  }
+  .animated-text-color {
+    animation: animated-text-color 4s ease infinite;
+  }
+}
+
+@keyframes attention-ring {
+  0%, 100% {
+    transform: scale(0.95);
+    border-color: hsl(var(--primary) / 0.2);
+  }
+  50% {
+    transform: scale(1.1);
+    border-color: hsl(var(--primary) / 1);
+  }
+}
+
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animated-text-color {
+  0%, 100% {
+    color: hsl(var(--primary));
+  }
+  25% {
+    color: hsl(var(--accent));
+  }
+  50% {
+    color: hsl(var(--secondary-foreground));
+  }
+  75% {
+    color: hsl(var(--accent));
+  }
+}
