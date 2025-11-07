@@ -29,9 +29,9 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  authors: [{ name: "Hakkan Shah", url: "https://hakkan.is-a.dev" }],
-  creator: "Hakkan Shah",
-  publisher: "Hakkan Shah",
+  authors: [{ name: "Hakkan Parbej Shah", url: "https://hakkan.is-a.dev" }],
+  creator: "Hakkan Parbej Shah",
+  publisher: "Hakkan Parbej Shah",
   keywords: [
     "mockhick",
     "mock interview",
@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     "career coach",
     "Gemini AI",
     "voice interview",
+    "Hakkan Parbej Shah",
+    "AI",
+    "interview coach",
   ],
   metadataBase: new URL("https://mockhick.vercel.app"), 
   alternates: {
@@ -97,6 +100,27 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebApplication',
+  name: APP_NAME,
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Any',
+  description: APP_DESCRIPTION,
+  author: {
+    '@type': 'Person',
+    name: 'Hakkan Shah',
+    url: 'https://hakkan.is-a.dev',
+  },
+  url: 'https://mockhick.vercel.app',
+  image: 'https://mockhick.vercel.app/mock.png',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'INR',
+  },
+};
+
 
 export default function RootLayout({
   children,
@@ -105,6 +129,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
+      <head>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          />
+      </head>
       <body className="font-body antialiased h-full">
         <AuthProvider>
           {children}
