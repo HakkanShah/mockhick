@@ -87,7 +87,6 @@ const testimonials = [
 export default function Home() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-image');
-  const [loading, setLoading] = useState(true);
   const [api, setApi] = useState<CarouselApi>()
   const [current, setCurrent] = useState(0)
   const [count, setCount] = useState(0)
@@ -95,15 +94,6 @@ export default function Home() {
   const autoplayPlugin = useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
-
-  useEffect(() => {
-    // Simulate page loading
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 500); // Adjust time as needed
-    return () => clearTimeout(timer);
-  }, []);
-  
 
   useEffect(() => {
     if (!api) {
@@ -126,19 +116,6 @@ export default function Home() {
     [api]
   );
   
-
-  if (loading) {
-    return (
-       <div className="flex h-screen w-screen items-center justify-center bg-background">
-        <div className="flex flex-col items-center gap-4 animate-fade-in">
-          <div className="relative flex h-16 w-16 items-center justify-center rounded-full border-2 border-primary/20 animate-attention-ring">
-            <MockHickIcon className="h-10 w-10 text-primary" />
-          </div>
-          <p className="text-muted-foreground text-lg">Loading...</p>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -364,9 +341,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
-
-    
