@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     "AI",
     "interview coach",
   ],
-  metadataBase: new URL("https://mockhick.vercel.app"), 
+  metadataBase: new URL("https://mockhick.is-a.software"), 
   alternates: {
     canonical: "/",
   },
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
       template: APP_TITLE_TEMPLATE,
     },
     description: APP_DESCRIPTION,
-    url: new URL("https://mockhick.vercel.app"), 
+    url: new URL("https://mockhick.is-a.software"), 
     images: [
       {
         url: "/mock.png", 
@@ -112,8 +112,8 @@ const jsonLd = {
     name: 'Hakkan Shah',
     url: 'https://hakkan.is-a.dev',
   },
-  url: 'https://mockhick.vercel.app',
-  image: 'https://mockhick.vercel.app/mock.png',
+  url: 'https://mockhick.is-a.software',
+  image: 'https://mockhick.is-a.software/mock.png',
   offers: {
     '@type': 'Offer',
     price: '0',
