@@ -1,8 +1,8 @@
 # MockHick (मौखिक) - AI Interview Coach
 
-[![MockHick Hero Image](/public/mockhick.jpg)](https://mockhick.vercel.app)
+[![MockHick Hero Image](/public/mockhick.jpg)](https://mockhick.is-a.software)
 
-**[Live Demo](https://mockhick.vercel.app) &nbsp;&middot;&nbsp; [Report a Bug](https://github.com/HakkanShah/mockhick/issues) &nbsp;&middot;&nbsp; [Request a Feature](https://github.com/HakkanShah/mockhick/issues)**
+**[Live Demo](https://mockhick.is-a.software) &nbsp;&middot;&nbsp; [Report a Bug](https://github.com/HakkanShah/mockhick/issues) &nbsp;&middot;&nbsp; [Request a Feature](https://github.com/HakkanShah/mockhick/issues)**
 
 ---
 
