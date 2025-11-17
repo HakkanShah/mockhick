@@ -1,4 +1,3 @@
-
 /*
 The following command is required to create a composite index for the 'interviews' collection.
 This allows querying interviews by userId and ordering them by creation date, which is
